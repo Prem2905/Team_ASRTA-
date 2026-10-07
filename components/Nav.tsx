@@ -1,7 +1,16 @@
 import Link from "next/link";
 import { FileCheck2, ShieldCheck, ClipboardList } from "lucide-react";
 
-export default function Nav() {
+import { createClient } from "@/lib/supabase-server";
+import UserMenu from "./UserMenu";
+
+export default async function Nav() {
+  const supabase = await createClient();
+
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+
   return (
     <nav className="site-nav">
       <div className="container nav-inner">
@@ -16,7 +25,7 @@ export default function Nav() {
         </Link>
 
         <div className="nav-links">
-          <Link className="nav-link active" href="/services">
+          <Link className="nav-link" href="/services">
             Services
           </Link>
 
@@ -29,6 +38,14 @@ export default function Nav() {
             <FileCheck2 size={16} />
             Audit & trust
           </Link>
+
+          {user ? (
+            <UserMenu email={user.email || "Citizen"} />
+          ) : (
+            <Link href="/login" className="nav-login">
+              Login
+            </Link>
+          )}
         </div>
       </div>
     </nav>

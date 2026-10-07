@@ -3,6 +3,7 @@
 1. Run `npm install` and `npm run dev`.
 2. In Supabase SQL Editor, run `supabase/schema.sql`.
    For an existing installation, run `supabase/add-e-kalyan-scheme.sql` to add E-Kalyan Scholarship to the live services catalogue.
+   If signup returns “Database error saving new user”, run `supabase/fix-auth-signup.sql` in the SQL Editor.
 3. In Storage, create a **private** bucket named `documents`.
 4. Create citizen/admin users in Authentication → Users.
 5. Give the admin user's UUID the `admin` role in `profiles` using the SQL comment at the bottom of the schema.

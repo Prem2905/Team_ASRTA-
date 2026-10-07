@@ -1286,45 +1286,327 @@ button {
 }
 
 
-/* =========================================================
-   SMALL PHONES
-   ========================================================= */
+  /* =========================================
+   AUTH
+========================================= */
 
-@media (max-width: 420px) {
+.auth-page {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 70px 20px;
+}
 
-  .brand {
-    font-size: 16px;
+.auth-card {
+  width: 100%;
+  max-width: 520px;
+  background: white;
+  border: 1px solid #eadfd5;
+  border-radius: 24px;
+  padding: 36px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+}
+
+.auth-brand {
+  display: inline-block;
+  color: #17243d;
+  font-size: 20px;
+  font-weight: 700;
+  text-decoration: none;
+  margin-bottom: 25px;
+}
+
+.auth-brand b {
+  color: #e76f2f;
+}
+
+.auth-card h1 {
+  margin: 0 0 10px;
+  font-size: 34px;
+}
+
+.auth-description {
+  color: #6c6c6c;
+  line-height: 1.6;
+}
+
+.auth-tabs {
+  display: flex;
+  gap: 8px;
+  margin: 25px 0;
+  background: #f7f1eb;
+  padding: 5px;
+  border-radius: 12px;
+}
+
+.auth-tabs button {
+  flex: 1;
+  border: 0;
+  padding: 11px;
+  border-radius: 9px;
+  background: transparent;
+  cursor: pointer;
+}
+
+.auth-tabs button.active {
+  background: white;
+  font-weight: 700;
+}
+
+.auth-form {
+  display: grid;
+  gap: 18px;
+}
+
+.auth-form label,
+.profile-form label,
+.application-form label {
+  display: grid;
+  gap: 7px;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.auth-form input,
+.profile-form input,
+.profile-form textarea,
+.profile-form select,
+.application-form input,
+.application-form textarea,
+.application-form select {
+  width: 100%;
+  border: 1px solid #d9d0c7;
+  border-radius: 10px;
+  padding: 12px 13px;
+  font: inherit;
+  background: white;
+  box-sizing: border-box;
+}
+
+.auth-form input:focus,
+.profile-form input:focus,
+.profile-form textarea:focus,
+.profile-form select:focus,
+.application-form input:focus,
+.application-form textarea:focus,
+.application-form select:focus {
+  outline: 2px solid rgba(231, 111, 47, 0.2);
+  border-color: #e76f2f;
+}
+
+.auth-submit {
+  width: 100%;
+  border: 0;
+}
+
+.auth-error {
+  padding: 12px;
+  border-radius: 10px;
+  background: #fff0ed;
+  color: #b42318;
+}
+
+.auth-success {
+  padding: 12px;
+  border-radius: 10px;
+  background: #edf9f0;
+  color: #217a3c;
+}
+
+
+/* =========================================
+   USER MENU
+========================================= */
+
+.user-menu {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.user-profile-link {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.user-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: #e76f2f;
+  color: white;
+  font-weight: 700;
+}
+
+.user-email {
+  max-width: 160px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.nav-login,
+.logout-btn {
+  border: 0;
+  border-radius: 9px;
+  padding: 9px 14px;
+  text-decoration: none;
+  cursor: pointer;
+  background: #17243d;
+  color: white;
+}
+
+
+/* =========================================
+   PROFILE
+========================================= */
+
+.page-shell {
+  padding-top: 60px;
+  padding-bottom: 80px;
+}
+
+.page-heading {
+  max-width: 760px;
+  margin-bottom: 35px;
+}
+
+.page-heading h1 {
+  font-size: clamp(36px, 6vw, 64px);
+  margin: 8px 0 15px;
+}
+
+.page-heading p {
+  color: #686868;
+  line-height: 1.7;
+}
+
+.eyebrow {
+  font-size: 12px;
+  letter-spacing: 0.15em;
+  font-weight: 800;
+  color: #e76f2f;
+}
+
+.profile-card,
+.application-card,
+.service-detail-card {
+  background: white;
+  border: 1px solid #eadfd5;
+  border-radius: 24px;
+  padding: 30px;
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.05);
+}
+
+.profile-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.profile-full {
+  grid-column: 1 / -1;
+}
+
+.profile-actions {
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.profile-message {
+  color: #26743a;
+}
+
+
+/* =========================================
+   APPLICATION
+========================================= */
+
+.application-section {
+  margin-bottom: 40px;
+}
+
+.application-section h2 {
+  margin-bottom: 20px;
+}
+
+.auto-fill-notice {
+  padding: 14px 16px;
+  margin-bottom: 30px;
+  border-radius: 12px;
+  background: #edf8ef;
+  color: #246b35;
+  font-weight: 600;
+}
+
+.application-submit {
+  padding-top: 25px;
+  border-top: 1px solid #eee5dc;
+}
+
+.application-message {
+  margin-top: 15px;
+  color: #26743a;
+  font-weight: 600;
+}
+
+.primary-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: 10px;
+  padding: 13px 20px;
+  background: #e76f2f;
+  color: white;
+  text-decoration: none;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.primary-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 760px) {
+
+  .nav-links {
+    gap: 8px;
   }
 
-  .brand-mark {
-    width: 28px;
-    height: 28px;
+  .user-email {
+    display: none;
   }
 
-  .hero-copy h1 {
+  .profile-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .profile-full {
+    grid-column: auto;
+  }
+
+  .auth-card,
+  .profile-card,
+  .application-card {
+    padding: 22px;
+  }
+
+  .page-heading h1 {
     font-size: 40px;
-  }
-
-  .hero-actions {
-    align-items: stretch;
-
-    flex-direction: column;
-  }
-
-  .hero-btn,
-  .hero-secondary {
-    width: 100%;
-
-    justify-content: center;
-
-    text-align: center;
-  }
-
-  .scheme-card {
-    padding: 19px;
-  }
-
-  .scheme-card h3 {
-    font-size: 22px;
   }
 }
