@@ -1,0 +1,1 @@
+import './globals.css';import Nav from '@/components/Nav';import Footer from '@/components/Footer';import Assistant from '@/components/Assistant';export default function Layout({children}:{children:React.ReactNode}){return <html lang="en"><body><Nav/>{children}<Footer/><Assistant/></body></html>}
