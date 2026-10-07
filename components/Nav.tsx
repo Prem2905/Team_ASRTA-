@@ -1,1 +1,36 @@
-import Link from 'next/link';import {Bot,Home,LayoutDashboard,Search,ShieldCheck} from 'lucide-react';export default function Nav(){return <nav style={{background:'#fff',borderBottom:'1px solid #e7ebf3',position:'sticky',top:0,zIndex:30}}><div className="container" style={{height:70,display:'flex',alignItems:'center',justifyContent:'space-between'}}><Link href="/" style={{fontWeight:900,fontSize:20,display:'flex',gap:9,alignItems:'center'}}><ShieldCheck size={24} color="#155eef"/>Seva<span style={{color:'#155eef'}}>Agent</span></Link><div style={{display:'flex',gap:7,flexWrap:'wrap'}}><Link className="btn" href="/"><Home size={16}/>Home</Link><Link className="btn" href="/services"><Search size={16}/>Services</Link><Link className="btn" href="/agent"><Bot size={16}/>Agent</Link><Link className="btn" href="/dashboard"><LayoutDashboard size={16}/>My Applications</Link></div></div></nav>}
+import Link from "next/link";
+import { FileCheck2, ShieldCheck, ClipboardList } from "lucide-react";
+
+export default function Nav() {
+  return (
+    <nav className="site-nav">
+      <div className="container nav-inner">
+        <Link href="/" className="brand">
+          <span className="brand-mark">
+            <ShieldCheck size={20} />
+          </span>
+
+          <span>
+            Dastavez <b>Saarthi</b>
+          </span>
+        </Link>
+
+        <div className="nav-links">
+          <Link className="nav-link active" href="/services">
+            Services
+          </Link>
+
+          <Link className="nav-link" href="/dashboard">
+            <ClipboardList size={16} />
+            My applications
+          </Link>
+
+          <Link className="nav-link" href="/#trust">
+            <FileCheck2 size={16} />
+            Audit & trust
+          </Link>
+        </div>
+      </div>
+    </nav>
+  );
+}

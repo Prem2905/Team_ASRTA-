@@ -1,1 +1,41 @@
-export default function Footer(){return <footer style={{background:'#10213a',color:'#dce5f5',marginTop:70}}><div className="container" style={{padding:'45px 22px',display:'grid',gridTemplateColumns:'2fr 1fr 1fr',gap:25}}><div><h3 style={{color:'#fff'}}>SevaAgent</h3><p>AI-assisted citizen service discovery, document collection, verification and certificate tracking.</p></div><div><b style={{color:'#fff'}}>Citizen</b><p>Find services</p><p>Ask the agent</p><p>Track application</p></div><div><b style={{color:'#fff'}}>Governance</b><p>Verification</p><p>Certificate issue</p><p>Service management</p></div></div><div style={{borderTop:'1px solid #2d3e5a',padding:18,textAlign:'center'}}>Hackathon demo • Official government APIs can replace the simulated issue action.</div></footer>}
+export default function Footer() {
+  return (
+    <footer className="saathi-footer">
+      <div className="container footer-inner">
+        <div>
+          <h3>Dastavez Saarthi</h3>
+
+          <p>
+            A citizen-first AI guide for discovering government services,
+            preparing documents and tracking applications.
+          </p>
+        </div>
+
+        <div>
+          <b>Citizen</b>
+
+          <p>Services & schemes</p>
+
+          <p>My applications</p>
+
+          <p>Talk to Saarthi</p>
+        </div>
+
+        <div>
+          <b>Trust</b>
+
+          <p>Audit trail</p>
+
+          <p>Human verification</p>
+
+          <p>Secure document handling</p>
+        </div>
+      </div>
+
+      <div className="footer-bottom">
+        Demo civic-tech platform • Government actions are simulated unless
+        connected to an official department API.
+      </div>
+    </footer>
+  );
+}
